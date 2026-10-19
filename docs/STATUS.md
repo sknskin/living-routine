@@ -73,7 +73,7 @@
 ## 차단·미검증 (사용자 조치 필요)
 
 1. **GitHub 연동**: 완료 — 개인 계정 `sknskin` 의 `living-routine` 저장소로 푸시 (저장소 로컬 설정으로 인증, 전역 gh 활성 계정은 변경하지 않음).
-2. **클라우드 Supabase(dev / internal-test)**: 개인 계정으로 프로젝트 생성·연결 필요. 회사 계정 사용 금지.
+2. **클라우드 Supabase(dev / internal-test)**: 계획 수립 완료 → [`docs/CLOUD-SUPABASE-PLAN.md`](CLOUD-SUPABASE-PLAN.md). 실행에는 개인 계정 로그인·프로젝트 생성 승인·가입 인증 메일 방식 결정 필요. 회사 계정 사용 금지.
 3. **소셜 로그인 공급자(O02)**: Google/Apple/Kakao 조합 결정 필요.
 4. **푸시 발송(Expo Push)**: EAS 프로젝트·푸시 자격증명·실기기 필요. 현재는 앱 내 알림함까지만 동작, `push_status` 는 기기 없으면 skipped.
 5. **실기기 검증(T19·T20)**, **내부 베타(C05)**.
