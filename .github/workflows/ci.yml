@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  app:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run typecheck
+      - run: npm test -- --ci
+
+  database:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      # 로컬 Supabase 스택으로 마이그레이션 재현 + pgTAP (Gate 1)
+      # Reproduce migrations on a local Supabase stack + pgTAP (Gate 1)
+      - run: npx supabase start -x studio,imgproxy,mailpit,edge-runtime,logflare,vector,supavisor
+      - run: npx supabase test db
+      - run: npx supabase stop
+        if: always()
