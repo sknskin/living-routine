@@ -4,6 +4,8 @@
 
 - 기획 문서: [`docs/planning/`](docs/planning/README.md) — 판정 기준은 `docs/planning/docs/00-decision-register.md`
 - 진행 상태·테스트 근거·차단 항목: [`docs/STATUS.md`](docs/STATUS.md)
+- 잔여 과제·다음 세션 인수인계: [`docs/NEXT-STEPS.md`](docs/NEXT-STEPS.md)
+- 클라우드 Supabase 연결 계획: [`docs/CLOUD-SUPABASE-PLAN.md`](docs/CLOUD-SUPABASE-PLAN.md)
 - 스택: React Native + Expo SDK 58 (Expo Router, TypeScript) / Supabase (PostgreSQL·Auth·Realtime·pg_cron)
 
 ## 로컬에서 실행하기
