@@ -20,5 +20,8 @@ export const supabase = createClient<Database>(SUPABASE_URL, SUPABASE_PUBLISHABL
     autoRefreshToken: !isServer,
     persistSession: !isServer,
     detectSessionInUrl: false,
+    // 메일 링크(가입 인증·비밀번호 재설정)는 PKCE 코드로 받아 /auth/callback 에서 세션으로 교환
+    // Email links (sign-up confirmation, password reset) use PKCE codes exchanged at /auth/callback
+    flowType: 'pkce',
   },
 });

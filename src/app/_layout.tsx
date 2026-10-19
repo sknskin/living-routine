@@ -20,6 +20,8 @@ function RootNavigator() {
     <Stack screenOptions={{ headerShown: false }}>
       <Stack.Screen name="index" />
       <Stack.Screen name="invite/[code]" />
+      <Stack.Screen name="auth/callback" />
+      <Stack.Screen name="reset-password" />
       <Stack.Protected guard={signedIn}>
         <Stack.Screen name="(app)" />
       </Stack.Protected>
