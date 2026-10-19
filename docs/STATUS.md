@@ -1,5 +1,7 @@
 # 개발 진행 상태 (FC01)
 
+> **다음 세션은 [`NEXT-STEPS.md`](NEXT-STEPS.md)(잔여 과제·인수인계)부터 읽는다.**
+
 > 기준일 2026-10-19 · 착수 승인 범위: 전체 사이클(사용자 지시 "전체 사이클 완주까지", "권장하는 대로 진행")
 > 상태 정의는 `docs/planning/docs/10-roadmap.md`: backlog / ready / in-progress / blocked / implemented / tested / verified / done.
 > **구현됨 ≠ 검증 완료.** 실기기·외부 계정이 필요한 항목은 아래 "차단·미검증"에 분리했다.
@@ -85,7 +87,7 @@
 - 근거·조치 표: [`docs/UX-GAP-ANALYSIS.md`](UX-GAP-ANALYSIS.md)
 - 색감 재설계(대비 실측 `scripts/contrast-check.mjs`), SVG 일러스트·차트, 홈·기록·캘린더·루틴·회차 화면 개선
 - 기능 추가: 개인 알림 선택, 이번 회차만 변경, 정정 요청, 초대 링크 공유/진입, 공간 이름 변경, 관리자 내려놓기, 연결 끊김 안내
-- 마이그레이션 추가: `20261019001000_ux_features`, `001100_correction_message`, `001200_review_fixes_ux`
+- 마이그레이션 추가: `20261019001000_ux_features`, `001100_correction_message`, `001200_review_fixes_ux`, `001300_reschedule_rule`
 - 추가 의존성: `react-native-svg`(일러스트·차트), `@react-native-community/netinfo`(연결 상태) — 사용자 "권장대로 진행" 지시에 따라 추가
 - 독립 리뷰: HIGH 3 / MEDIUM 4 / LOW 10 → 전부 수정 (고정 회차 이동 시 원래 슬롯 재생성, 알림 키 충돌, 오프라인 요청 보류·재전송[O01 위반] 포함)
 - 재검토: 모든 항목 FIXED 확인, 단 새 날짜 충돌 규칙의 퇴행(R1: 매일 루틴 이동·원래 날짜 복귀 불가) 지적 → `20261019001300_reschedule_rule` 로 규칙 재정의(미래 날짜 어디로든 이동 가능, 원래 슬롯은 slot_date 로 유지). 이에 맞춰 기존 테스트 2건의 기대값을 바꿨고(동작 정의 변경), 매일 루틴 이동·원래 날짜 복귀 테스트를 추가
